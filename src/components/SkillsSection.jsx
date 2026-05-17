@@ -411,19 +411,20 @@ const SkillsSection = () => {
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
           gap: 16px;
           align-items: start;
-          grid-auto-rows: minmax(140px, auto);
+          grid-auto-rows: 1fr;
         }
 
         @media (max-width: 768px) {
           .skills-grid {
             grid-template-columns: repeat(2, 1fr);
-            min-height: 460px;
+            min-height: 620px;
           }
         }
 
         @media (max-width: 480px) {
           .skills-grid {
             grid-template-columns: repeat(2, 1fr);
+            min-height: 620px;
           }
         }
 
@@ -435,6 +436,7 @@ const SkillsSection = () => {
           align-items: flex-start;
           gap: 12px;
           padding: 22px 18px 18px;
+          min-height: 170px;
           border-radius: 16px;
           background: #0d1117;
           border: 1px solid rgba(255,255,255,0.07);
