@@ -410,10 +410,21 @@ const SkillsSection = () => {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
           gap: 16px;
+          align-items: start;
+          grid-auto-rows: minmax(140px, auto);
+        }
+
+        @media (max-width: 768px) {
+          .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+            min-height: 460px;
+          }
         }
 
         @media (max-width: 480px) {
-          .skills-grid { grid-template-columns: repeat(2, 1fr); }
+          .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
 
         /* ── individual card ── */
