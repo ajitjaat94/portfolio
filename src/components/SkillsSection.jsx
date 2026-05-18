@@ -177,14 +177,19 @@ const SkillsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef(null);
 
-  useEffect(() => {
+  const restartInterval = () => {
+    clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % categories.length);
     }, 3200);
+  };
+
+  useEffect(() => {
+    restartInterval();
     return () => clearInterval(intervalRef.current);
   }, []);
 
-  const activeCat = categories[activeIndex];
+  const activeCat = categories[activeIndex] ?? categories[0];
   const activeSkills = techStack.filter((t) =>
     activeCat.skills.includes(t.name),
   );
@@ -595,10 +600,7 @@ const SkillsSection = () => {
                 className={`skills-tab${activeIndex === i ? " active" : ""}`}
                 onClick={() => {
                   setActiveIndex(i);
-                  clearInterval(intervalRef.current);
-                  intervalRef.current = setInterval(() => {
-                    setActiveIndex((prev) => (prev + 1) % categories.length);
-                  }, 3200);
+                  restartInterval();
                 }}
               >
                 <span className="skills-tab-index">{cat.index}</span>
