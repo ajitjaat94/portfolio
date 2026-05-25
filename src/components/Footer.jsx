@@ -3,7 +3,7 @@ import { BsLinkedin } from 'react-icons/bs';
 
 const Footer = () => {
   const scrollToTop = () => {
-    const el = document.getElementById('home');
+    const el = document.getElementById('/home');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -14,8 +14,8 @@ const Footer = () => {
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
           <button onClick={scrollToTop} className="text-sm text-white/70 transition hover:text-yellow-400">Back to top</button>
           <div className="flex items-center gap-4">
-            <a href="#" title="GitHub" className="text-white/60 transition hover:text-white/90"><SiGithub size={18} /></a>
-            <a href="#" title="LinkedIn" className="text-white/60 transition hover:text-white/90"><BsLinkedin size={18} /></a>
+            <a href="https://github.com/ajitjaat94" title="GitHub" className="text-white/60 transition hover:text-white/90"><SiGithub size={18} /></a>
+            <a href="https://www.linkedin.com/in/ajit-kumar-ajitjaat94" title="LinkedIn" className="text-white/60 transition hover:text-white/90"><BsLinkedin size={18} /></a>
           </div>
         </div>
       </div>
